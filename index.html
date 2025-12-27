@@ -23,10 +23,9 @@
     }
 
     header {
-      padding: 40px 0;
+      padding: 50px 0;
     }
 
-    /* Glowing animated title */
     h1 {
       font-size: 42px;
       text-shadow: 0 0 5px #fffd82, 0 0 15px #fffd82;
@@ -42,7 +41,6 @@
       }
     }
 
-    /* Profile image hover magic */
     img.profile {
       width: 180px;
       height: 180px;
@@ -62,23 +60,8 @@
       margin-top: 20px;
       font-size: 18px;
       line-height: 1.6;
-      opacity: 0;
-      animation: fadeUp 1.5s ease forwards;
-      animation-delay: 0.5s;
     }
 
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Clickable commission badge */
     .badge {
       display: inline-block;
       margin-top: 15px;
@@ -94,24 +77,54 @@
       color: #000;
       transform: scale(1.1);
     }
+
+    /* ABOUT SECTION */
+    .about {
+      max-width: 700px;
+      margin: 80px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px #fffd82;
+    }
+
+    .about p {
+      font-size: 18px;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Naitik Animates</h1>
+  <header>
+    <h1>Naitik Animates</h1>
 
-  <img class="profile" src="profile.jpg" alt="Naitik Animates Profile Picture">
+    <img class="profile" src="profile.jpg" alt="Naitik Animates Profile Picture">
 
-  <div class="bio">
-    Animation • Digital Art • Traditional Drawing
-  </div>
+    <div class="bio">
+      Animation • Digital Art • Traditional Drawing
+    </div>
 
-  <div class="badge">
-    Open for commissions ✨
-  </div>
-</header>
+    <div class="badge">
+      Open for commissions ✨
+    </div>
+  </header>
+
+  <!-- ABOUT ME SECTION -->
+  <section class="about">
+    <h2>About Me</h2>
+    <p>
+      Hi, I’m Naitik — a young animator and digital artist.
+      I love creating expressive characters, smooth animations,
+      and clean illustrations using both digital and traditional methods.
+    </p>
+  </section>
 
 </body>
 </html>
