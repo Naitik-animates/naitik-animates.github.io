@@ -3,24 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <title>Naitik Animates</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #0f0f0f;
+      background: linear-gradient(270deg, #0f0f0f, #1a1a1a, #0f0f0f);
+      background-size: 400% 400%;
+      animation: bgMove 15s ease infinite;
       color: #ffffff;
       text-align: center;
       margin: 0;
       padding: 0;
     }
+
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     header {
       padding: 40px 0;
     }
-    img {
-  transition: transform 0.3s ease;
-}
-img:hover {
-  transform: scale(1.1) rotate(5deg);
-}
+
+    /* Glowing animated title */
+    h1 {
+      font-size: 42px;
+      text-shadow: 0 0 5px #fffd82, 0 0 15px #fffd82;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px #fffd82;
+      }
+      to {
+        text-shadow: 0 0 20px #fffd82, 0 0 40px #fffd82;
+      }
+    }
+
+    /* Profile image hover magic */
     img.profile {
       width: 180px;
       height: 180px;
@@ -28,28 +50,69 @@ img:hover {
       border: 3px solid #ffffff;
       object-fit: cover;
       margin-top: 20px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
+
+    img.profile:hover {
+      transform: scale(1.15) rotate(5deg);
+      box-shadow: 0 0 30px #fffd82;
+    }
+
     .bio {
       margin-top: 20px;
       font-size: 18px;
-      line-height: 1.5;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeUp 1.5s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Clickable commission badge */
+    .badge {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 8px 16px;
+      border: 2px solid #fffd82;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .badge:hover {
+      background: #fffd82;
+      color: #000;
+      transform: scale(1.1);
     }
   </style>
 </head>
+
 <body>
 
 <header>
-  <h1
-  color: #fff;
-  text-shadow: 0 0 5px #fffd82, 0 0 10px #fffd82, 0 0 20px #fffd82;
+  <h1>Naitik Animates</h1>
 
->Naitik Animates</h1>
   <img class="profile" src="profile.jpg" alt="Naitik Animates Profile Picture">
+
   <div class="bio">
-    Animation • Digital Art • Traditional Drawing<br>
+    Animation • Digital Art • Traditional Drawing
+  </div>
+
+  <div class="badge">
     Open for commissions ✨
   </div>
 </header>
 
 </body>
 </html>
+
