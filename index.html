@@ -2,9 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
+  <!-- IMPORTANT FOR MOBILE -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Naitik Animates</title>
 
   <style>
+    /* GLOBAL */
     body {
       font-family: Arial, sans-serif;
       background: linear-gradient(270deg, #0f0f0f, #1a1a1a, #0f0f0f);
@@ -33,12 +38,8 @@
     }
 
     @keyframes glow {
-      from {
-        text-shadow: 0 0 5px #fffd82;
-      }
-      to {
-        text-shadow: 0 0 20px #fffd82, 0 0 40px #fffd82;
-      }
+      from { text-shadow: 0 0 5px #fffd82; }
+      to { text-shadow: 0 0 20px #fffd82, 0 0 40px #fffd82; }
     }
 
     img.profile {
@@ -78,19 +79,20 @@
       transform: scale(1.1);
     }
 
-    /* ABOUT */
-    .about {
+    /* SECTIONS */
+    section {
       max-width: 700px;
       margin: 80px auto;
       padding: 20px;
     }
 
-    .about h2 {
+    section h2 {
       font-size: 32px;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       text-shadow: 0 0 10px #fffd82;
     }
 
+    /* ABOUT */
     .about p {
       font-size: 18px;
       line-height: 1.6;
@@ -98,18 +100,6 @@
     }
 
     /* SKILLS */
-    .skills {
-      max-width: 700px;
-      margin: 80px auto;
-      padding: 20px;
-    }
-
-    .skills h2 {
-      font-size: 32px;
-      margin-bottom: 25px;
-      text-shadow: 0 0 10px #fffd82;
-    }
-
     .skill {
       margin-bottom: 20px;
       text-align: left;
@@ -140,11 +130,46 @@
       from { width: 0; }
       to { width: var(--level); }
     }
+
+    /* MOBILE FIXES */
+    @media (max-width: 600px) {
+
+      h1 {
+        font-size: 32px;
+      }
+
+      img.profile {
+        width: 140px;
+        height: 140px;
+      }
+
+      .bio {
+        font-size: 16px;
+        padding: 0 15px;
+      }
+
+      section {
+        margin: 50px auto;
+      }
+
+      section h2 {
+        font-size: 26px;
+      }
+
+      .about p {
+        font-size: 16px;
+      }
+
+      .skill-name {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
+  <!-- HEADER -->
   <header>
     <h1>Naitik Animates</h1>
 
@@ -159,6 +184,7 @@
     </div>
   </header>
 
+  <!-- ABOUT -->
   <section class="about">
     <h2>About Me</h2>
     <p>
@@ -168,7 +194,7 @@
     </p>
   </section>
 
-  <!-- SKILLS SECTION -->
+  <!-- SKILLS -->
   <section class="skills">
     <h2>My Skills</h2>
 
@@ -199,7 +225,6 @@
         <div class="skill-fill" style="--level: 70%;"></div>
       </div>
     </div>
-
   </section>
 
 </body>
